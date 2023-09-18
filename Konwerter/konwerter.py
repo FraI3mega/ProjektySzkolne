@@ -5,6 +5,7 @@ base = int(input('Podaj podstawę sytemu: '))
 sel =  input('Wybierz operację: \n1. Z systemu obcego na sytem dziesiętny \n2. Z systemu dziesiętnego na system obcy \n')
 
 def toAlien(input):
+    #FIXME: system jedynkowy
     cur = input
     result = ''
     while cur > 0:
