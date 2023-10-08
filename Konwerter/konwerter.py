@@ -61,7 +61,7 @@ def toAlien(input):
         while cur > 0:
             result += '1'
             cur -= 1
-    print('Wynik: ' + result[::-1] + "\n")
+    return result[::-1]
 
 def toDec(input):
     """Zamienia liczbę z systemu obcego na dzisiętny
@@ -73,7 +73,7 @@ def toDec(input):
     result = 0
     for x in input:
         result = result * base + toDecL[x.upper()]
-    print('Wynik: ' + str(result) + "\n")
+    return result
 
 print('''Konwerter systemów liczbowych
     DEC <-> do HEX
@@ -87,11 +87,11 @@ while True:
 
     if sel == 1:
         alien = str(input('Podaj liczbę w sytemie obcym: '))
-        toDec(alien)
+        print('Wynik: ' + str(toDec(alien)) + "\n")
 
     elif sel == 2:
         dec = int(input('Podaj liczbę w sytemie dziesiętnym: '))
-        toAlien(dec)
+        print('Wynik: ' + toAlien(dec) + "\n")
     
     elif sel == 3:
         base = int(input('Podaj podstawę sytemu: '))
