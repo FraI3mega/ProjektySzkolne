@@ -44,6 +44,11 @@ toAlienL = {
 base = 0
 
 def toAlien(input):
+    """Zamienia liczbę z systemu dziesiętnego na obcy
+
+    Args:
+        input (int): Liczba która ma być zamieniona na system obcy
+    """
     cur = input
     result = ''
     if base != 1:
@@ -59,6 +64,12 @@ def toAlien(input):
     print('Wynik: ' + result[::-1] + "\n")
 
 def toDec(input):
+    """Zamienia liczbę z systemu obcego na dzisiętny
+
+    Args:
+        input (string): Liczba która ma być zamieniona
+    """
+
     result = 0
     for x in input:
         result = result * base + toDecL[x.upper()]
@@ -66,7 +77,7 @@ def toDec(input):
 
 print('''Konwerter systemów liczbowych
     DEC <-> do HEX
-    FraI3mega @ 2023\n''')
+    FraI3mega@2023\n''')
 
 while True:
     if base == 0:
