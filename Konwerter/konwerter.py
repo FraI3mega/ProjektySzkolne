@@ -64,6 +64,10 @@ def toDec(input):
         result = result * base + toDecL[x]
     print('Wynik: ' + str(result) + "\n")
 
+print('''Konwerter systemów liczbowych
+    DEC <-> do HEX
+    FraI3mega @ 2023\n''')
+
 while True:
     if base == 0:
         base = int(input('Podaj podstawę sytemu: '))
