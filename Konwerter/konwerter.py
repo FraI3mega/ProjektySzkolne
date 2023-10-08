@@ -61,7 +61,7 @@ def toAlien(input):
 def toDec(input):
     result = 0
     for x in input:
-        result = result * base + toDecL[x]
+        result = result * base + toDecL[x.upper()]
     print('Wynik: ' + str(result) + "\n")
 
 print('''Konwerter systemów liczbowych
