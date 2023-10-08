@@ -43,7 +43,7 @@ toAlienL = {
 
 base = 0
 
-def toAlien(input):
+def toAlien(input,podstawa):
     """Zamienia liczbę z systemu dziesiętnego na obcy
 
     Args:
@@ -55,7 +55,7 @@ def toAlien(input):
         # Gdy podstawa systemu nie jest cyfrą jeden
         while cur > 0:
             result += toAlienL[cur % base]
-            cur = cur // base
+            cur = cur // podstawa
     else:
         # Gdy podstawa jest cyfrą jeden dodaj do wyniki tyle jedynek jaką ma wartość wejściowa
         while cur > 0:
@@ -63,16 +63,17 @@ def toAlien(input):
             cur -= 1
     return result[::-1]
 
-def toDec(input):
+def toDec(input,podstawa):
     """Zamienia liczbę z systemu obcego na dzisiętny
 
     Args:
         input (string): Liczba która ma być zamieniona
+        baza (int): podstawa
     """
 
     result = 0
     for x in input:
-        result = result * base + toDecL[x.upper()]
+        result = result * podstawa + toDecL[x.upper()]
     return result
 
 print('''Konwerter systemów liczbowych
@@ -87,11 +88,11 @@ while True:
 
     if sel == 1:
         alien = str(input('Podaj liczbę w sytemie obcym: '))
-        print('Wynik: ' + str(toDec(alien)) + "\n")
+        print('Wynik: ' + str(toDec(alien,base)) + "\n")
 
     elif sel == 2:
         dec = int(input('Podaj liczbę w sytemie dziesiętnym: '))
-        print('Wynik: ' + toAlien(dec) + "\n")
+        print('Wynik: ' + toAlien(dec,base) + "\n")
     
     elif sel == 3:
         base = int(input('Podaj podstawę sytemu: '))
