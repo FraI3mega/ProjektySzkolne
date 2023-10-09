@@ -84,7 +84,7 @@ while True:
     if base == 0:
         base = int(input('Podaj podstawę sytemu: '))
     
-    sel =  int(input('Wybierz operację: \n1. Z systemu obcego na sytem dziesiętny \n2. Z systemu dziesiętnego na system obcy \n3. Zmień podstawę systemu\n4. Wyjdź z programu\n> '))
+    sel = int(input('Wybierz operację: \n1. Z systemu obcego na sytem dziesiętny \n2. Z systemu dziesiętnego na system obcy \n3. Zmień podstawę systemu\n4. Wyjdź z programu\n> '))
 
     if sel == 1:
         alien = str(input('Podaj liczbę w sytemie obcym: '))
