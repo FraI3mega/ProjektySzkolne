@@ -48,6 +48,7 @@ def toAlien(input,podstawa):
 
     Args:
         input (int): Liczba która ma być zamieniona na system obcy
+        podstawa (int): podstawa
     """
     cur = input
     result = ''
@@ -68,13 +69,15 @@ def toDec(input,podstawa):
 
     Args:
         input (string): Liczba która ma być zamieniona
-        baza (int): podstawa
+        podstawa (int): podstawa
     """
 
     result = 0
-    for x in input:
+    for x in str(input):
         result = result * podstawa + toDecL[x.upper()]
     return result
+
+#Głowna pętla programu
 
 print('''Konwerter systemów liczbowych
     DEC <-> do HEX
