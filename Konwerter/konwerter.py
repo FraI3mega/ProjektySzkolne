@@ -22,26 +22,8 @@ toDecL = {
     'F': 15
 }
 
-toAlienL = {
-    0: '0',
-    1: '1',
-    2: '2',
-    3: '3',
-    4: '4',
-    5: '5',
-    6: '6',
-    7: '7',
-    8: '8',
-    9: '9',
-    10: 'A',
-    11: 'B',
-    12: 'C',
-    13: 'D',
-    14: 'E',
-    15: 'F'
-}
-
 base = 0
+char_table = '0123456789ABCDEF'
 
 def toAlien(input,podstawa):
     """Zamienia liczbę z systemu dziesiętnego na obcy
@@ -55,7 +37,7 @@ def toAlien(input,podstawa):
     if base != 1:
         # Gdy podstawa systemu nie jest cyfrą jeden
         while cur > 0:
-            result += toAlienL[cur % base]
+            result += char_table[cur % base]
             cur = cur // podstawa
     else:
         # Gdy podstawa jest cyfrą jeden dodaj do wyniki tyle jedynek jaką ma wartość wejściowa
