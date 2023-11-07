@@ -38,6 +38,21 @@ def toDec(input,podstawa):
         result = result * podstawa + char_table.index(x.upper())
     return result
 
+def clean(input):
+    """czyści dane wejsćiowe
+
+    Args:
+        input (string): dane wejściowe
+
+    Returns:
+        string: dane wejściowe bez niepożądanych znaków
+    """
+    result = ''
+    for i in input.upper():
+        if i in char_table:
+            result += i
+    return result
+
 
 print('''Konwerter systemów liczbowych
     DEC <-> do HEX
@@ -49,12 +64,12 @@ while True: #Głowna pętla programu
     
     sel = int(input('Wybierz operację: \n1. Z systemu obcego na sytem dziesiętny \n2. Z systemu dziesiętnego na system obcy \n3. Zmień podstawę systemu\n4. Wyjdź z programu\n> '))
     if sel == 1:
-        alien = input('Podaj liczbę w sytemie obcym: ')
-        print('Wynik: ' + str(toDec(alien,base)) + "\n")
+        alien = clean(input('Podaj liczbę w sytemie obcym: '))
+        print('Wynik: ',toDec(alien,base), "\n")
 
     elif sel == 2:
-        dec = int(input('Podaj liczbę w sytemie dziesiętnym: '))
-        print('Wynik: ' + toAlien(dec,base) + "\n")
+        dec = int(clean(input('Podaj liczbę w sytemie dziesiętnym: ')))
+        print('Wynik: ', toAlien(dec,base), "\n")
     
     elif sel == 3: base = int(input('Podaj podstawę sytemu: '))
     
